@@ -10,7 +10,7 @@ module.exports = {
   },
   module: {
     rules: [
-      { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
+      { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
       {
         oneOf: [
           { test: /\.ts$/, loader: 'awesome-typescript-loader' },
