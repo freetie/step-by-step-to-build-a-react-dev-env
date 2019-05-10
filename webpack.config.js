@@ -3,17 +3,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.ts',
+  entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
   },
   module: {
     rules: [
-      { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
+      { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
       {
         oneOf: [
-          { test: /\.ts$/, loader: 'awesome-typescript-loader' },
+          { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
           {
             test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
             loader: 'url-loader',
@@ -35,7 +35,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.ts', '.js', '.json'],
+    extensions: ['.ts', 'tsx', '.js', '.json'],
   },
   devtool: 'source-map',
   plugins: [
